@@ -48,7 +48,7 @@ Puppet::Type.newtype(:netscaler_sslcertkey) do
     truthy_property("Issue an alert when the certificate is about to expire.", "ENABLED", "DISABLED")
   end
 
-  newproperty(:notificationperiod) do
+  newproperty(:notification_period) do
     desc "Time, in number of days, before certificate expiration, at which to generate an alert that the certificate is about to expire."
   end
 
@@ -60,7 +60,7 @@ Puppet::Type.newtype(:netscaler_sslcertkey) do
     desc "Name of the Certificate Authority certificate-key pair to which to link a certificate-key pair."
   end
 
-  newproperty(:nodomaincheck, :parent => Puppet::Property::NetscalerTruthy) do
+  newproperty(:nodomain_check, :parent => Puppet::Property::NetscalerTruthy) do
     truthy_property("Override the check for matching domain names during a certificate update operation.", "true", "false")
   end
 end
